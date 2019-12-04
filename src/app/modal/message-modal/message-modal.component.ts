@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-message-modal',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./message-modal.component.scss']
 })
 export class MessageModalComponent implements OnInit {
+
+  @Input('messageModal') messageModal : string;
 
   constructor() { }
 

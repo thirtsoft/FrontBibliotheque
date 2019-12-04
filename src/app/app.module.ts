@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDatepickerModule, MatInputModule,MatNativeDateModule, MAT_DATE_LOCALE} from '@angular/material';
+import { NgxSpinnerModule } from 'ngx-spinner'; 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MailModalComponent } from './modal/mail-modal/mail-modal.component';
@@ -27,11 +31,12 @@ import { LoanComponent } from './loan/loan.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
+    FormsModule, /* for using form elements linke NgForm*/
+    HttpClientModule, /*for using http request elements end verbs like GET, POST, PUT, DELETE... */
+    MatDatepickerModule, MatInputModule, MatNativeDateModule, BrowserAnimationsModule, ReactiveFormsModule, /* for using input date picker -> need to install @angular/material package*/
+    NgxSpinnerModule /* for using spinner */
   ],
-  providers: [],
+  providers: [{provide: MAT_DATE_LOCALE, useValue: 'en-GB'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
